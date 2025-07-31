@@ -1,5 +1,5 @@
 # Site Details
-site_name: Kloud Koncepts
+site_name: Kloud Koncepts Test
 site_description: >-
   Master Kubernetes and Microservices on the cloud. Learn how to deploy applications on Kubernetes,
   including Service Mesh, CI/CD, logging, and monitoring, while following the best DevOps practices.
@@ -9,255 +9,253 @@ repo_name: ReyanshKharga/eks-kubernetes-masterclass
 repo_url: https://github.com/ReyanshKharga/eks-kubernetes-masterclass
 strict: true
 
-
 # Define TOC or order of website
 nav:
   - Home: index.md
   - Kubernetes on Amazon EKS:
-    - Course Introduction: ./kubernetes-on-eks/index.md
-    - License: ./kubernetes-on-eks/license.md
-    - Docker Fundamentals:
-      - Introduction to Docker: ./kubernetes-on-eks/docker-fundamentals/introduction-to-docker.md
-      - Install Docker: ./kubernetes-on-eks/docker-fundamentals/install-docker.md
-      - Run Container From a Public Docker Image: ./kubernetes-on-eks/docker-fundamentals/run-container-from-public-image.md
-      - Create Docker Image: 
-        - Customized Nginx Docker Image: ./kubernetes-on-eks/docker-fundamentals/customized-nginx-docker-image.md
-        - Containerizing Node.js and Express App: ./kubernetes-on-eks/docker-fundamentals/nodejs-express-docker-image.md
-      - Push Image to Docker Hub: ./kubernetes-on-eks/docker-fundamentals/push-image-to-docker-hub.md
-    - YAML Fundamentals:
-      - Introduction to YAML: ./kubernetes-on-eks/yaml-fundamentals/introduction-to-yaml.md
-      - YAML Syntax and Structure: ./kubernetes-on-eks/yaml-fundamentals/yaml-syntax-and-structure.md
-      - Data Types in YAML: ./kubernetes-on-eks/yaml-fundamentals/data-types-in-yaml.md
-      - YAML Tools and Resources: ./kubernetes-on-eks/yaml-fundamentals/yaml-tools-and-resources.md
-      - Advanced Features in YAML: ./kubernetes-on-eks/yaml-fundamentals/advanced-yaml-features.md
-    - Kubernetes Overview and Architecture: 
-      - Introduction to Kubernetes: ./kubernetes-on-eks/kubernetes-overview-and-architecture/introduction-to-kubernetes.md
-      - Architecture of Kubernetes: ./kubernetes-on-eks/kubernetes-overview-and-architecture/kubernetes-architecture.md
-    - Amazon EKS Overview and Architecture:
-      - Introduction to Amazon EKS: ./kubernetes-on-eks/amazon-eks-overview-and-architecture/introduction-to-amazon-eks.md
-      - Architecture of Amazon EKS: ./kubernetes-on-eks/amazon-eks-overview-and-architecture/eks-architecture.md
-    - Install CLI Tools:
-      - Introduction to CLI Tools: ./kubernetes-on-eks/install-cli-tools/introduction-to-cli-tools.md
-      - Install and Configure AWS CLI: ./kubernetes-on-eks/install-cli-tools/install-and-configure-aws-cli.md
-      - Install Kubectl: ./kubernetes-on-eks/install-cli-tools/install-kubectl.md
-      - Install Eksctl: ./kubernetes-on-eks/install-cli-tools/install-eksctl.md
-      - Install Helm CLI: ./kubernetes-on-eks/install-cli-tools/install-helm-cli.md
-    - Create EKS Cluster:
-      - Create EKS Cluster Using eksctl: ./kubernetes-on-eks/create-eks-cluster/create-eks-cluster.md
-      - Verify Worker Nodes: ./kubernetes-on-eks/create-eks-cluster/verify-worker-nodes.md
-      - VPC Resources Created by EKS: ./kubernetes-on-eks/create-eks-cluster/vpc-resources-created-by-eksctl.md
-      - Delete EKS Cluster: ./kubernetes-on-eks/create-eks-cluster/delete-eks-cluster.md
-    - Kubernetes Fundamentals:
-      - Pod:
-        - Introduction to Pod: ./kubernetes-on-eks/kubernetes-fundamentals/pod/introduction-to-pod.md
-        - Imperative vs Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/pod/imperative-vs-declarative-approach.md
-        - Pod Using Imperative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/pod/pod-using-imperative-approach.md
-        - Pod Using Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/pod/pod-using-declarative-approach.md
-        - Busybox Pod: ./kubernetes-on-eks/kubernetes-fundamentals/pod/busybox-pod.md
-        - Pod With Labels: ./kubernetes-on-eks/kubernetes-fundamentals/pod/pod-with-labels.md
-      - ReplicaSet:
-        - Introduction to ReplicaSet: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/introduction-to-replicaset.md
-        - Create ReplicaSet: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/create-replicaset.md
-        - How Does ReplicaSet Manage Pods?: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/how-does-replicaset-manage-pods.md
-        - Challenges With ReplicaSets: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/challenges-with-replicasets.md
-      - Deployment:
-        - Introduction to Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/introduction-to-deployment.md
-        - Deployment Using Imperative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/deployment-using-imperative-approach.md
-        - Scale a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/scale-deployment.md
-        - Update a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/update-deployment.md
-        - Rollback a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/rollback-deployment.md
-        - Deployment Using Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/deployment-using-declarative-approach.md
-        - Pause and Resume a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/pause-and-resume-deployment.md
-      - Service:
-        - Access Pods Without Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/access-pods-without-service.md
-        - Introduction to Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/introduction-to-service.md
-        - Kubernetes Service Types: ./kubernetes-on-eks/kubernetes-fundamentals/service/service-types.md
-        - Exposure Level of Different Service Types: ./kubernetes-on-eks/kubernetes-fundamentals/service/exposure-level-of-service-types.md
-        - Create Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-service.md
-        - Role of Selector in Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/role-of-selector-in-service.md
-        - Create NodePort Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-nodeport-service.md
-        - port vs targetPort vs nodePort: ./kubernetes-on-eks/kubernetes-fundamentals/service/port-vs-targetport-vs-nodeport.md
-        - AWS Load Balancer Types: ./kubernetes-on-eks/kubernetes-fundamentals/service/aws-load-balancer-types.md
-        - Create LoadBalancer Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-loadbalancer-service.md
-        - Create LoadBalancer Service With NLB: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-loadbalancer-service-with-nlb.md
-        - LoadBalancer Service With ALB: ./kubernetes-on-eks/kubernetes-fundamentals/service/loadbalancer-service-with-alb.md
-        - Create ExternalName Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-externalname-service.md
-      - Init Container:
-        - Introduction to Init Containers: ./kubernetes-on-eks/kubernetes-fundamentals/init-containers/introduction-to-init-containers.md
-        - Init Containers Demo: ./kubernetes-on-eks/kubernetes-fundamentals/init-containers/init-containers-demo.md
-      - Probes:
-        - Introduction to Probes: ./kubernetes-on-eks/kubernetes-fundamentals/probes/introduction-to-probes.md
-        - Types of Probes: ./kubernetes-on-eks/kubernetes-fundamentals/probes/types-of-probes.md
-        - Liveness Probe Demo: ./kubernetes-on-eks/kubernetes-fundamentals/probes/liveness-probe-demo.md
-        - Readiness Probe Demo: ./kubernetes-on-eks/kubernetes-fundamentals/probes/readiness-probe-demo.md
-        - Startup Probe Demo: ./kubernetes-on-eks/kubernetes-fundamentals/probes/startup-probe-demo.md
-        - Probes in Combination: ./kubernetes-on-eks/kubernetes-fundamentals/probes/probes-in-combination.md
-      - Namespace:
-        - Introduction to Namespace: ./kubernetes-on-eks/kubernetes-fundamentals/namespace/introduction-to-namespace.md
-        - Namespace Using Imperative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/namespace/namespace-using-imperative-approach.md
-        - Namespace Using Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/namespace/namespace-using-declarative-approach.md
-      - Storage in Kubernetes:
-        - Introduction to Storage in Kubernetes: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/introduction-to-storage-in-kubernetes.md
-        - emptyDir Volume:
-          - Introduction to emptyDir Volume: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/emptydir-volume/introduction-to-emptydir-volume.md
-          - emptyDir Volume Demo: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/emptydir-volume/emptydir-volume-demo.md
-          - emptyDir Volume to Share Data Between Containers: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/emptydir-volume/using-emptydir-volume-to-share-data-between-containers.md
-        - hostPath Volume:
-          - Introduction to hostPath Volume: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/hostpath-volume/introduction-to-hostpath-volume.md
-          - hostPath Volume Demo: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/hostpath-volume/hostpath-volume-demo.md
-        - Persistent Volumes:
-          - Introduction to Persistent Volumes: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes.md
-          - Persistent Volume Demo: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/persistent-volume-demo-using-local-storage.md
-        - Persistent Volume Using Amazon EBS:
-          - Introduction to EBS CSI Driver: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/introduction-to-ebs-csi-driver.md
-          - Install EBS CSI Driver: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/install-ebs-csi-driver.md
-          - Static Provisioning of PV Using EBS: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/static-provisioning-of-pv-using-ebs.md
-          - Dynamic Provisioning of PV Using EBS: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs.md
-      - ConfigMap:
-        - Introduction to ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/introduction-to-configmap.md
-        - Create ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/create-and-manage-configmaps.md
-        - Use ConfigMap for Environment Variables:
-          - Conventional Approach of Supplying Environment Variables: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/conventional-approach-of-supplying-environment-variables.md
-          - Use ConfigMap to Supply Environment Variables: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/use-configmap-to-supply-environment-variables.md
-          - Supply Environment Variables From Multiple Sources: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/supply-environment-variables-from-multiple-sources.md
-          - Supply Only Specific Environment Variables From ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/supply-only-specific-environment-variables-from-configmap.md
-        - Use ConfigMap as Volume: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/use-configmap-as-volume.md
-        - Supply Nginx Configuration Using ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/supply-nginx-configuration-using-configmap.md
-        - Supply Multiple Nginx Configuration Using ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/supply-multiple-nginx-configuration-using-configmap.md
-      - Secret:
-        - Introduction to Secret: ./kubernetes-on-eks/kubernetes-fundamentals/secret/introduction-to-secret.md
-        - Create Secret: ./kubernetes-on-eks/kubernetes-fundamentals/secret/create-secret.md
-        - Use Secret to Supply Environment Variables: ./kubernetes-on-eks/kubernetes-fundamentals/secret/use-secret-to-supply-environment-variables.md
-        - Use Secret as Volume: ./kubernetes-on-eks/kubernetes-fundamentals/secret/use-secret-as-volume.md
-      - Requests and Limits:
-        - Introduction to Requests and Limits: ./kubernetes-on-eks/kubernetes-fundamentals/requests-and-limits/introduction-to-requests-and-limits.md
-        - Install Metrics Server: ./kubernetes-on-eks/kubernetes-fundamentals/requests-and-limits/install-metrics-server.md
-        - Configure Pods With Requests and Limits: ./kubernetes-on-eks/kubernetes-fundamentals/requests-and-limits/configure-pods-with-requests-and-limits.md
-      - LimitRange:
-        - Introduction to LimitRange: ./kubernetes-on-eks/kubernetes-fundamentals/limitrange/introduction-to-limitrange.md
-        - Create LimitRange: ./kubernetes-on-eks/kubernetes-fundamentals/limitrange/create-limitrange.md
-      - Resource Quota:
-        - Introduction to Resource Quota: ./kubernetes-on-eks/kubernetes-fundamentals/resource-quota/introduction-to-resource-quota.md
-        - Create Resource Quota: ./kubernetes-on-eks/kubernetes-fundamentals/resource-quota/create-resource-quota.md
-      - DaemonSet:
-        - Introduction to DaemonSet: ./kubernetes-on-eks/kubernetes-fundamentals/daemonset/introduction-to-daemonset.md
-        - Create DaemonSet: ./kubernetes-on-eks/kubernetes-fundamentals/daemonset/create-daemonset.md
-    - Service Account in Kubernetes:
-      - Introduction to Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/introduction-to-service-account.md
-      - Default Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/the-default-service-account.md
-      - Create Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/create-service-account.md
-      - Associate Pod With Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/associate-pod-with-service-account.md
-    - IAM Roles for Service Accounts (IRSA):
-      - Introduction to IRSA: ./kubernetes-on-eks/iam-roles-for-service-accounts/introduction-to-iam-roles-for-service-accounts.md
-      - How Does IRSA Work: ./kubernetes-on-eks/iam-roles-for-service-accounts/how-does-irsa-work.md
-      - Create IAM Roles for Service Accounts: ./kubernetes-on-eks/iam-roles-for-service-accounts/create-iam-roles-for-service-accounts.md
-    - Private EKS NodeGroup:
-      - Create Private EKS NodeGroup: ./kubernetes-on-eks/private-eks-nodegroup/create-private-eks-nodegroup.md
-    - Ingress and Ingress Controller:
-      - Introduction to Ingress: ./kubernetes-on-eks/ingress/introduction-to-ingress.md
-      - AWS Load Balancer Controller:
-        - Introduction to AWS Load Balancer Controller: ./kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller.md
-        - Install AWS Load Balancer Controller: ./kubernetes-on-eks/ingress/aws-load-balancer-controller/install-aws-load-balancer-controller.md
-      - Ingress With Instance Mode: ./kubernetes-on-eks/ingress/ingress-with-instance-mode.md
-      - Ingress With IP Mode: ./kubernetes-on-eks/ingress/ingress-with-ip-mode.md
-      - Ingress With Default Backend: ./kubernetes-on-eks/ingress/ingress-with-default-backend.md
-      - Ingress With Health Check: ./kubernetes-on-eks/ingress/ingress-with-health-check.md
-      - Ingress With Path Based Routing: ./kubernetes-on-eks/ingress/ingress-with-path-based-routing.md
-      - Ingress With SSL: ./kubernetes-on-eks/ingress/ingress-with-ssl.md
-      - Ingress With SSL Redirect: ./kubernetes-on-eks/ingress/ingress-with-ssl-redirect.md
-      - Ingress With SSL Discovery:
-        - SSL Discovery Via Host: ./kubernetes-on-eks/ingress/ingress-with-ssl-discovery/ingress-with-ssl-discovery-via-host.md
-        - SSL Discovery Via TLS: ./kubernetes-on-eks/ingress/ingress-with-ssl-discovery/ingress-with-ssl-discovery-via-tls.md
-      - Ingress With Multiple Hosts: ./kubernetes-on-eks/ingress/ingress-with-multiple-hosts.md
-      - Ingress With IngressGroup: ./kubernetes-on-eks/ingress/ingress-with-ingressgroup.md
-      - Ingress With Internal Load Balancer: ./kubernetes-on-eks/ingress/ingress-with-internal-load-balancer.md
-    - ExternalDNS:
-      - Introduction to ExternalDNS: ./kubernetes-on-eks/external-dns/introduction-to-external-dns.md
-      - Install ExternalDNS: ./kubernetes-on-eks/external-dns/install-external-dns.md
-      - ExternalDNS Demo With One Host: ./kubernetes-on-eks/external-dns/external-dns-demo-with-one-host.md
-      - ExternalDNS Demo With Multiple Hosts: ./kubernetes-on-eks/external-dns/external-dns-demo-with-multiple-hosts.md
-      - ExternalDNS Demo With Private Hosted Zone: ./kubernetes-on-eks/external-dns/external-dns-demo-with-private-hosted-zone.md
-    - NLB Using AWS Load Balancer Controller:
-      - Introduction to NLB Using AWS Load Balancer Controller: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/introduction-to-nlb-using-aws-load-balancer-controller.md
-      - Reconciliation of NLB to LBC Using loadBalancerClass: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/offload-reconciliation-of-nlb-to-lbc-using-loadbalancerclass.md
-      - Reconciliation of NLB to LBC Using Annotation: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/offload-reconciliation-of-nlb-to-lbc-using-annotation.md
-      - NLB With Health Check: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-health-check.md
-      - NLB With TLS: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-tls.md
-      - NLB With Multiple Listeners: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-multiple-listeners.md
-      - Configure Internal NLB: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/internal-nlb.md
-      - NLB With External DNS: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-external-dns.md
-    - Autoscaling:
-      - Cluster Autoscaler:
-        - Introduction to Cluster Autoscaling: ./kubernetes-on-eks/autoscaling/cluster-autoscaling/introduction-to-cluster-autoscaling.md
-        - Deploy Cluster Autoscaler in EKS: ./kubernetes-on-eks/autoscaling/cluster-autoscaling/deploy-cluster-autoscaler-in-eks.md
-        - Cluster Autoscaler Demo: ./kubernetes-on-eks/autoscaling/cluster-autoscaling/cluster-autoscaler-demo.md
-      - Horizontal Pod Autoscaler:
-        - Introduction to Horizontal Pod Autoscaler: ./kubernetes-on-eks/autoscaling/horizontal-pod-autoscaling/introduction-to-horizontal-pod-autoscaler.md
-        - Horizontal Pod Autoscaler Demo: ./kubernetes-on-eks/autoscaling/horizontal-pod-autoscaling/horizontal-pod-autoscaler-demo.md
-      - Vertical Pod Autoscaler:
-        - Introduction to Vertical Pod Autoscaler: ./kubernetes-on-eks/autoscaling/vertical-pod-autoscaling/introduction-to-vertical-pod-autoscaler.md
-        - Deploy Vertical Pod Autoscaler: ./kubernetes-on-eks/autoscaling/vertical-pod-autoscaling/deploy-vertical-pod-autoscaler.md
-        - Vertical Pod Autoscaler Demo: ./kubernetes-on-eks/autoscaling/vertical-pod-autoscaling/vertical-pod-autoscaler-demo.md
-    - Microservices:
-      - Introduction to Microservices: ./kubernetes-on-eks/microservices/introduction-to-microservices.md
-      - Deploy Microservices in Kubernetes: ./kubernetes-on-eks/microservices/deploy-microservices-in-kubernetes.md
-    - Logging:
-      - Logging Using FluentD and CloudWatch: ./kubernetes-on-eks/logging/logging-using-fluent-bit-and-cloudwatch.md
-    - Monitoring:
-      - Monitoring Using Prometheus and Grafana: ./kubernetes-on-eks/monitoring/monitoring-using-prometheus-and-grafana.md
-      - Create Grafana Dashboards: ./kubernetes-on-eks/monitoring/create-grafana-dashboards.md
-    - Service Mesh:
-      - Introduction to Service Mesh: ./kubernetes-on-eks/service-mesh/introduction-to-service-mesh.md
-      - Introduction to Isito: ./kubernetes-on-eks/service-mesh/introduction-to-istio.md
-      - Install Istio: ./kubernetes-on-eks/service-mesh/install-istio.md
-      - Using Istio for Service Mesh: ./kubernetes-on-eks/service-mesh/using-istio-for-service-mesh.md
-      - Deploy Book Management Microservices With Istio: ./kubernetes-on-eks/service-mesh/deploy-book-management-microservices-with-service-mesh.md
-      - Istio Metrics and Monitoring: ./kubernetes-on-eks/service-mesh/istio-metrics-and-monitoring.md
-      - Install Kiali: ./kubernetes-on-eks/service-mesh/install-kiali.md
-      - Install Jaegar: ./kubernetes-on-eks/service-mesh/install-jaegar.md
-      - Delete Istio: ./kubernetes-on-eks/service-mesh/delete-istio.md
-      - Traffic Management in Istio: ./kubernetes-on-eks/service-mesh/traffic-management-in-istio.md
-      - Install Istio With Application Load Balancer: ./kubernetes-on-eks/service-mesh/install-istio-with-application-load-balancer.md
-      - Deploy App With Istio Gateway and Virtual Service: ./kubernetes-on-eks/service-mesh/deploy-app-with-istio-gateway-and-virtual-service.md
-      - Configure ExternalDNS for Istio Integration: ./kubernetes-on-eks/service-mesh/configure-external-dns-for-istio.md
-      - Deploy App With Istio and ExternalDNS: ./kubernetes-on-eks/service-mesh/deploy-app-with-istio-and-external-dns.md
-      - Deploy Istio Gateway for Prometheus: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-prometheus.md
-      - Deploy Istio Gateway for Grafana: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-grafana.md
-      - Deploy Istio Gateway for Kiali: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-kiali.md
-      - Deploy Istio Gateway for Jaegar: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-jaegar.md
-      - Update Book Management Microservices: ./kubernetes-on-eks/service-mesh/update-book-management-microservices-with-istio-gateway.md
-      - Delete Book Managment Microservices: ./kubernetes-on-eks/service-mesh/delete-book-management-microservice.md
-      - Traffic Splitting Using Istio: ./kubernetes-on-eks/service-mesh/traffic-splitting-using-istio.md
-      - Canary Deployment Using Istio: ./kubernetes-on-eks/service-mesh/canary-deployment-using-istio.md
-      - Fault Injection Using Istio:
-        - Introduction to Fault Injection: ./kubernetes-on-eks/service-mesh/fault-injection/introduction-to-fault-injection.md
-        - Inject Failure Using Delays: ./kubernetes-on-eks/service-mesh/fault-injection/inject-failure-using-delays.md
-        - Inject Failure Using Aborts: ./kubernetes-on-eks/service-mesh/fault-injection/inject-failure-using-aborts.md
-      - Circuit Breaking Using Istio: ./kubernetes-on-eks/service-mesh/circuit-breaking-using-istio.md
-      - Retry Strategy Using Istio: ./kubernetes-on-eks/service-mesh/retry-strategy-using-istio.md
-    - Amazon ECR:
-      - Introduction to Amazon ECR: ./kubernetes-on-eks/amazon-ecr/introduction-to-amazon-ecr.md
-    - EKS With Amazon ECR:
-      - EKS With Amazon ECR: ./kubernetes-on-eks/eks-with-amazon-ecr/eks-with-amazon-ecr.md
-    - CI/CD for EKS:
-      - CI/CD for EKS Using AWS CodePipeline: ./kubernetes-on-eks/ci-cd-with-eks/ci-cd-for-eks-using-aws-codepipeline.md
-    - Helm:
-      - Introduction to Helm: ./kubernetes-on-eks/helm/introduction-to-helm.md
-      - Helm Upgrade and Rollback: ./kubernetes-on-eks/helm/helm-upgrade-and-rollback.md
-      - Create Your Own Helm Chart: ./kubernetes-on-eks/helm/create-your-own-helm-chart.md
-      - Using Helm for Templating: ./kubernetes-on-eks/helm/using-helm-for-templating.md
-    - CI/CD for Helm:
-      - CI/CD for Helm Using AWS CodePipeline: ./kubernetes-on-eks/ci-cd-for-helm/ci-cd-for-helm-using-aws-codepipeline.md
-    - Argo CD:
-      - Introduction to Argo CD: ./kubernetes-on-eks/argo-cd/introduction-to-argo-cd.md
-      - Install Argo CD: ./kubernetes-on-eks/argo-cd/install-argo-cd.md
-      - Create Argo CD Application: ./kubernetes-on-eks/argo-cd/create-argo-cd-application.md
+      - Course Introduction: ./kubernetes-on-eks/index.md
+      - License: ./kubernetes-on-eks/license.md
+      - Docker Fundamentals:
+          - Introduction to Docker: ./kubernetes-on-eks/docker-fundamentals/introduction-to-docker.md
+          - Install Docker: ./kubernetes-on-eks/docker-fundamentals/install-docker.md
+          - Run Container From a Public Docker Image: ./kubernetes-on-eks/docker-fundamentals/run-container-from-public-image.md
+          - Create Docker Image:
+              - Customized Nginx Docker Image: ./kubernetes-on-eks/docker-fundamentals/customized-nginx-docker-image.md
+              - Containerizing Node.js and Express App: ./kubernetes-on-eks/docker-fundamentals/nodejs-express-docker-image.md
+          - Push Image to Docker Hub: ./kubernetes-on-eks/docker-fundamentals/push-image-to-docker-hub.md
+      - YAML Fundamentals:
+          - Introduction to YAML: ./kubernetes-on-eks/yaml-fundamentals/introduction-to-yaml.md
+          - YAML Syntax and Structure: ./kubernetes-on-eks/yaml-fundamentals/yaml-syntax-and-structure.md
+          - Data Types in YAML: ./kubernetes-on-eks/yaml-fundamentals/data-types-in-yaml.md
+          - YAML Tools and Resources: ./kubernetes-on-eks/yaml-fundamentals/yaml-tools-and-resources.md
+          - Advanced Features in YAML: ./kubernetes-on-eks/yaml-fundamentals/advanced-yaml-features.md
+      - Kubernetes Overview and Architecture:
+          - Introduction to Kubernetes: ./kubernetes-on-eks/kubernetes-overview-and-architecture/introduction-to-kubernetes.md
+          - Architecture of Kubernetes: ./kubernetes-on-eks/kubernetes-overview-and-architecture/kubernetes-architecture.md
+      - Amazon EKS Overview and Architecture:
+          - Introduction to Amazon EKS: ./kubernetes-on-eks/amazon-eks-overview-and-architecture/introduction-to-amazon-eks.md
+          - Architecture of Amazon EKS: ./kubernetes-on-eks/amazon-eks-overview-and-architecture/eks-architecture.md
+      - Install CLI Tools:
+          - Introduction to CLI Tools: ./kubernetes-on-eks/install-cli-tools/introduction-to-cli-tools.md
+          - Install and Configure AWS CLI: ./kubernetes-on-eks/install-cli-tools/install-and-configure-aws-cli.md
+          - Install Kubectl: ./kubernetes-on-eks/install-cli-tools/install-kubectl.md
+          - Install Eksctl: ./kubernetes-on-eks/install-cli-tools/install-eksctl.md
+          - Install Helm CLI: ./kubernetes-on-eks/install-cli-tools/install-helm-cli.md
+      - Create EKS Cluster:
+          - Create EKS Cluster Using eksctl: ./kubernetes-on-eks/create-eks-cluster/create-eks-cluster.md
+          - Verify Worker Nodes: ./kubernetes-on-eks/create-eks-cluster/verify-worker-nodes.md
+          - VPC Resources Created by EKS: ./kubernetes-on-eks/create-eks-cluster/vpc-resources-created-by-eksctl.md
+          - Delete EKS Cluster: ./kubernetes-on-eks/create-eks-cluster/delete-eks-cluster.md
+      - Kubernetes Fundamentals:
+          - Pod:
+              - Introduction to Pod: ./kubernetes-on-eks/kubernetes-fundamentals/pod/introduction-to-pod.md
+              - Imperative vs Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/pod/imperative-vs-declarative-approach.md
+              - Pod Using Imperative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/pod/pod-using-imperative-approach.md
+              - Pod Using Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/pod/pod-using-declarative-approach.md
+              - Busybox Pod: ./kubernetes-on-eks/kubernetes-fundamentals/pod/busybox-pod.md
+              - Pod With Labels: ./kubernetes-on-eks/kubernetes-fundamentals/pod/pod-with-labels.md
+          - ReplicaSet:
+              - Introduction to ReplicaSet: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/introduction-to-replicaset.md
+              - Create ReplicaSet: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/create-replicaset.md
+              - How Does ReplicaSet Manage Pods?: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/how-does-replicaset-manage-pods.md
+              - Challenges With ReplicaSets: ./kubernetes-on-eks/kubernetes-fundamentals/replicaset/challenges-with-replicasets.md
+          - Deployment:
+              - Introduction to Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/introduction-to-deployment.md
+              - Deployment Using Imperative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/deployment-using-imperative-approach.md
+              - Scale a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/scale-deployment.md
+              - Update a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/update-deployment.md
+              - Rollback a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/rollback-deployment.md
+              - Deployment Using Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/deployment-using-declarative-approach.md
+              - Pause and Resume a Deployment: ./kubernetes-on-eks/kubernetes-fundamentals/deployment/pause-and-resume-deployment.md
+          - Service:
+              - Access Pods Without Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/access-pods-without-service.md
+              - Introduction to Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/introduction-to-service.md
+              - Kubernetes Service Types: ./kubernetes-on-eks/kubernetes-fundamentals/service/service-types.md
+              - Exposure Level of Different Service Types: ./kubernetes-on-eks/kubernetes-fundamentals/service/exposure-level-of-service-types.md
+              - Create Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-service.md
+              - Role of Selector in Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/role-of-selector-in-service.md
+              - Create NodePort Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-nodeport-service.md
+              - port vs targetPort vs nodePort: ./kubernetes-on-eks/kubernetes-fundamentals/service/port-vs-targetport-vs-nodeport.md
+              - AWS Load Balancer Types: ./kubernetes-on-eks/kubernetes-fundamentals/service/aws-load-balancer-types.md
+              - Create LoadBalancer Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-loadbalancer-service.md
+              - Create LoadBalancer Service With NLB: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-loadbalancer-service-with-nlb.md
+              - LoadBalancer Service With ALB: ./kubernetes-on-eks/kubernetes-fundamentals/service/loadbalancer-service-with-alb.md
+              - Create ExternalName Service: ./kubernetes-on-eks/kubernetes-fundamentals/service/create-externalname-service.md
+          - Init Container:
+              - Introduction to Init Containers: ./kubernetes-on-eks/kubernetes-fundamentals/init-containers/introduction-to-init-containers.md
+              - Init Containers Demo: ./kubernetes-on-eks/kubernetes-fundamentals/init-containers/init-containers-demo.md
+          - Probes:
+              - Introduction to Probes: ./kubernetes-on-eks/kubernetes-fundamentals/probes/introduction-to-probes.md
+              - Types of Probes: ./kubernetes-on-eks/kubernetes-fundamentals/probes/types-of-probes.md
+              - Liveness Probe Demo: ./kubernetes-on-eks/kubernetes-fundamentals/probes/liveness-probe-demo.md
+              - Readiness Probe Demo: ./kubernetes-on-eks/kubernetes-fundamentals/probes/readiness-probe-demo.md
+              - Startup Probe Demo: ./kubernetes-on-eks/kubernetes-fundamentals/probes/startup-probe-demo.md
+              - Probes in Combination: ./kubernetes-on-eks/kubernetes-fundamentals/probes/probes-in-combination.md
+          - Namespace:
+              - Introduction to Namespace: ./kubernetes-on-eks/kubernetes-fundamentals/namespace/introduction-to-namespace.md
+              - Namespace Using Imperative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/namespace/namespace-using-imperative-approach.md
+              - Namespace Using Declarative Approach: ./kubernetes-on-eks/kubernetes-fundamentals/namespace/namespace-using-declarative-approach.md
+          - Storage in Kubernetes:
+              - Introduction to Storage in Kubernetes: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/introduction-to-storage-in-kubernetes.md
+              - emptyDir Volume:
+                  - Introduction to emptyDir Volume: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/emptydir-volume/introduction-to-emptydir-volume.md
+                  - emptyDir Volume Demo: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/emptydir-volume/emptydir-volume-demo.md
+                  - emptyDir Volume to Share Data Between Containers: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/emptydir-volume/using-emptydir-volume-to-share-data-between-containers.md
+              - hostPath Volume:
+                  - Introduction to hostPath Volume: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/hostpath-volume/introduction-to-hostpath-volume.md
+                  - hostPath Volume Demo: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/hostpath-volume/hostpath-volume-demo.md
+              - Persistent Volumes:
+                  - Introduction to Persistent Volumes: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes.md
+                  - Persistent Volume Demo: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/persistent-volume-demo-using-local-storage.md
+              - Persistent Volume Using Amazon EBS:
+                  - Introduction to EBS CSI Driver: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/introduction-to-ebs-csi-driver.md
+                  - Install EBS CSI Driver: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/install-ebs-csi-driver.md
+                  - Static Provisioning of PV Using EBS: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/static-provisioning-of-pv-using-ebs.md
+                  - Dynamic Provisioning of PV Using EBS: ./kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs.md
+          - ConfigMap:
+              - Introduction to ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/introduction-to-configmap.md
+              - Create ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/create-and-manage-configmaps.md
+              - Use ConfigMap for Environment Variables:
+                  - Conventional Approach of Supplying Environment Variables: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/conventional-approach-of-supplying-environment-variables.md
+                  - Use ConfigMap to Supply Environment Variables: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/use-configmap-to-supply-environment-variables.md
+                  - Supply Environment Variables From Multiple Sources: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/supply-environment-variables-from-multiple-sources.md
+                  - Supply Only Specific Environment Variables From ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/using-configmap-for-enironment-variables/supply-only-specific-environment-variables-from-configmap.md
+              - Use ConfigMap as Volume: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/use-configmap-as-volume.md
+              - Supply Nginx Configuration Using ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/supply-nginx-configuration-using-configmap.md
+              - Supply Multiple Nginx Configuration Using ConfigMap: ./kubernetes-on-eks/kubernetes-fundamentals/configmap/supply-multiple-nginx-configuration-using-configmap.md
+          - Secret:
+              - Introduction to Secret: ./kubernetes-on-eks/kubernetes-fundamentals/secret/introduction-to-secret.md
+              - Create Secret: ./kubernetes-on-eks/kubernetes-fundamentals/secret/create-secret.md
+              - Use Secret to Supply Environment Variables: ./kubernetes-on-eks/kubernetes-fundamentals/secret/use-secret-to-supply-environment-variables.md
+              - Use Secret as Volume: ./kubernetes-on-eks/kubernetes-fundamentals/secret/use-secret-as-volume.md
+          - Requests and Limits:
+              - Introduction to Requests and Limits: ./kubernetes-on-eks/kubernetes-fundamentals/requests-and-limits/introduction-to-requests-and-limits.md
+              - Install Metrics Server: ./kubernetes-on-eks/kubernetes-fundamentals/requests-and-limits/install-metrics-server.md
+              - Configure Pods With Requests and Limits: ./kubernetes-on-eks/kubernetes-fundamentals/requests-and-limits/configure-pods-with-requests-and-limits.md
+          - LimitRange:
+              - Introduction to LimitRange: ./kubernetes-on-eks/kubernetes-fundamentals/limitrange/introduction-to-limitrange.md
+              - Create LimitRange: ./kubernetes-on-eks/kubernetes-fundamentals/limitrange/create-limitrange.md
+          - Resource Quota:
+              - Introduction to Resource Quota: ./kubernetes-on-eks/kubernetes-fundamentals/resource-quota/introduction-to-resource-quota.md
+              - Create Resource Quota: ./kubernetes-on-eks/kubernetes-fundamentals/resource-quota/create-resource-quota.md
+          - DaemonSet:
+              - Introduction to DaemonSet: ./kubernetes-on-eks/kubernetes-fundamentals/daemonset/introduction-to-daemonset.md
+              - Create DaemonSet: ./kubernetes-on-eks/kubernetes-fundamentals/daemonset/create-daemonset.md
+      - Service Account in Kubernetes:
+          - Introduction to Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/introduction-to-service-account.md
+          - Default Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/the-default-service-account.md
+          - Create Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/create-service-account.md
+          - Associate Pod With Service Account: ./kubernetes-on-eks/service-account-in-kubernetes/associate-pod-with-service-account.md
+      - IAM Roles for Service Accounts (IRSA):
+          - Introduction to IRSA: ./kubernetes-on-eks/iam-roles-for-service-accounts/introduction-to-iam-roles-for-service-accounts.md
+          - How Does IRSA Work: ./kubernetes-on-eks/iam-roles-for-service-accounts/how-does-irsa-work.md
+          - Create IAM Roles for Service Accounts: ./kubernetes-on-eks/iam-roles-for-service-accounts/create-iam-roles-for-service-accounts.md
+      - Private EKS NodeGroup:
+          - Create Private EKS NodeGroup: ./kubernetes-on-eks/private-eks-nodegroup/create-private-eks-nodegroup.md
+      - Ingress and Ingress Controller:
+          - Introduction to Ingress: ./kubernetes-on-eks/ingress/introduction-to-ingress.md
+          - AWS Load Balancer Controller:
+              - Introduction to AWS Load Balancer Controller: ./kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller.md
+              - Install AWS Load Balancer Controller: ./kubernetes-on-eks/ingress/aws-load-balancer-controller/install-aws-load-balancer-controller.md
+          - Ingress With Instance Mode: ./kubernetes-on-eks/ingress/ingress-with-instance-mode.md
+          - Ingress With IP Mode: ./kubernetes-on-eks/ingress/ingress-with-ip-mode.md
+          - Ingress With Default Backend: ./kubernetes-on-eks/ingress/ingress-with-default-backend.md
+          - Ingress With Health Check: ./kubernetes-on-eks/ingress/ingress-with-health-check.md
+          - Ingress With Path Based Routing: ./kubernetes-on-eks/ingress/ingress-with-path-based-routing.md
+          - Ingress With SSL: ./kubernetes-on-eks/ingress/ingress-with-ssl.md
+          - Ingress With SSL Redirect: ./kubernetes-on-eks/ingress/ingress-with-ssl-redirect.md
+          - Ingress With SSL Discovery:
+              - SSL Discovery Via Host: ./kubernetes-on-eks/ingress/ingress-with-ssl-discovery/ingress-with-ssl-discovery-via-host.md
+              - SSL Discovery Via TLS: ./kubernetes-on-eks/ingress/ingress-with-ssl-discovery/ingress-with-ssl-discovery-via-tls.md
+          - Ingress With Multiple Hosts: ./kubernetes-on-eks/ingress/ingress-with-multiple-hosts.md
+          - Ingress With IngressGroup: ./kubernetes-on-eks/ingress/ingress-with-ingressgroup.md
+          - Ingress With Internal Load Balancer: ./kubernetes-on-eks/ingress/ingress-with-internal-load-balancer.md
+      - ExternalDNS:
+          - Introduction to ExternalDNS: ./kubernetes-on-eks/external-dns/introduction-to-external-dns.md
+          - Install ExternalDNS: ./kubernetes-on-eks/external-dns/install-external-dns.md
+          - ExternalDNS Demo With One Host: ./kubernetes-on-eks/external-dns/external-dns-demo-with-one-host.md
+          - ExternalDNS Demo With Multiple Hosts: ./kubernetes-on-eks/external-dns/external-dns-demo-with-multiple-hosts.md
+          - ExternalDNS Demo With Private Hosted Zone: ./kubernetes-on-eks/external-dns/external-dns-demo-with-private-hosted-zone.md
+      - NLB Using AWS Load Balancer Controller:
+          - Introduction to NLB Using AWS Load Balancer Controller: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/introduction-to-nlb-using-aws-load-balancer-controller.md
+          - Reconciliation of NLB to LBC Using loadBalancerClass: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/offload-reconciliation-of-nlb-to-lbc-using-loadbalancerclass.md
+          - Reconciliation of NLB to LBC Using Annotation: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/offload-reconciliation-of-nlb-to-lbc-using-annotation.md
+          - NLB With Health Check: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-health-check.md
+          - NLB With TLS: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-tls.md
+          - NLB With Multiple Listeners: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-multiple-listeners.md
+          - Configure Internal NLB: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/internal-nlb.md
+          - NLB With External DNS: ./kubernetes-on-eks/nlb-using-aws-load-balancer-controller/nlb-with-external-dns.md
+      - Autoscaling:
+          - Cluster Autoscaler:
+              - Introduction to Cluster Autoscaling: ./kubernetes-on-eks/autoscaling/cluster-autoscaling/introduction-to-cluster-autoscaling.md
+              - Deploy Cluster Autoscaler in EKS: ./kubernetes-on-eks/autoscaling/cluster-autoscaling/deploy-cluster-autoscaler-in-eks.md
+              - Cluster Autoscaler Demo: ./kubernetes-on-eks/autoscaling/cluster-autoscaling/cluster-autoscaler-demo.md
+          - Horizontal Pod Autoscaler:
+              - Introduction to Horizontal Pod Autoscaler: ./kubernetes-on-eks/autoscaling/horizontal-pod-autoscaling/introduction-to-horizontal-pod-autoscaler.md
+              - Horizontal Pod Autoscaler Demo: ./kubernetes-on-eks/autoscaling/horizontal-pod-autoscaling/horizontal-pod-autoscaler-demo.md
+          - Vertical Pod Autoscaler:
+              - Introduction to Vertical Pod Autoscaler: ./kubernetes-on-eks/autoscaling/vertical-pod-autoscaling/introduction-to-vertical-pod-autoscaler.md
+              - Deploy Vertical Pod Autoscaler: ./kubernetes-on-eks/autoscaling/vertical-pod-autoscaling/deploy-vertical-pod-autoscaler.md
+              - Vertical Pod Autoscaler Demo: ./kubernetes-on-eks/autoscaling/vertical-pod-autoscaling/vertical-pod-autoscaler-demo.md
+      - Microservices:
+          - Introduction to Microservices: ./kubernetes-on-eks/microservices/introduction-to-microservices.md
+          - Deploy Microservices in Kubernetes: ./kubernetes-on-eks/microservices/deploy-microservices-in-kubernetes.md
+      - Logging:
+          - Logging Using FluentD and CloudWatch: ./kubernetes-on-eks/logging/logging-using-fluent-bit-and-cloudwatch.md
+      - Monitoring:
+          - Monitoring Using Prometheus and Grafana: ./kubernetes-on-eks/monitoring/monitoring-using-prometheus-and-grafana.md
+          - Create Grafana Dashboards: ./kubernetes-on-eks/monitoring/create-grafana-dashboards.md
+      - Service Mesh:
+          - Introduction to Service Mesh: ./kubernetes-on-eks/service-mesh/introduction-to-service-mesh.md
+          - Introduction to Isito: ./kubernetes-on-eks/service-mesh/introduction-to-istio.md
+          - Install Istio: ./kubernetes-on-eks/service-mesh/install-istio.md
+          - Using Istio for Service Mesh: ./kubernetes-on-eks/service-mesh/using-istio-for-service-mesh.md
+          - Deploy Book Management Microservices With Istio: ./kubernetes-on-eks/service-mesh/deploy-book-management-microservices-with-service-mesh.md
+          - Istio Metrics and Monitoring: ./kubernetes-on-eks/service-mesh/istio-metrics-and-monitoring.md
+          - Install Kiali: ./kubernetes-on-eks/service-mesh/install-kiali.md
+          - Install Jaegar: ./kubernetes-on-eks/service-mesh/install-jaegar.md
+          - Delete Istio: ./kubernetes-on-eks/service-mesh/delete-istio.md
+          - Traffic Management in Istio: ./kubernetes-on-eks/service-mesh/traffic-management-in-istio.md
+          - Install Istio With Application Load Balancer: ./kubernetes-on-eks/service-mesh/install-istio-with-application-load-balancer.md
+          - Deploy App With Istio Gateway and Virtual Service: ./kubernetes-on-eks/service-mesh/deploy-app-with-istio-gateway-and-virtual-service.md
+          - Configure ExternalDNS for Istio Integration: ./kubernetes-on-eks/service-mesh/configure-external-dns-for-istio.md
+          - Deploy App With Istio and ExternalDNS: ./kubernetes-on-eks/service-mesh/deploy-app-with-istio-and-external-dns.md
+          - Deploy Istio Gateway for Prometheus: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-prometheus.md
+          - Deploy Istio Gateway for Grafana: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-grafana.md
+          - Deploy Istio Gateway for Kiali: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-kiali.md
+          - Deploy Istio Gateway for Jaegar: ./kubernetes-on-eks/service-mesh/deploy-istio-gateway-for-jaegar.md
+          - Update Book Management Microservices: ./kubernetes-on-eks/service-mesh/update-book-management-microservices-with-istio-gateway.md
+          - Delete Book Managment Microservices: ./kubernetes-on-eks/service-mesh/delete-book-management-microservice.md
+          - Traffic Splitting Using Istio: ./kubernetes-on-eks/service-mesh/traffic-splitting-using-istio.md
+          - Canary Deployment Using Istio: ./kubernetes-on-eks/service-mesh/canary-deployment-using-istio.md
+          - Fault Injection Using Istio:
+              - Introduction to Fault Injection: ./kubernetes-on-eks/service-mesh/fault-injection/introduction-to-fault-injection.md
+              - Inject Failure Using Delays: ./kubernetes-on-eks/service-mesh/fault-injection/inject-failure-using-delays.md
+              - Inject Failure Using Aborts: ./kubernetes-on-eks/service-mesh/fault-injection/inject-failure-using-aborts.md
+          - Circuit Breaking Using Istio: ./kubernetes-on-eks/service-mesh/circuit-breaking-using-istio.md
+          - Retry Strategy Using Istio: ./kubernetes-on-eks/service-mesh/retry-strategy-using-istio.md
+      - Amazon ECR:
+          - Introduction to Amazon ECR: ./kubernetes-on-eks/amazon-ecr/introduction-to-amazon-ecr.md
+      - EKS With Amazon ECR:
+          - EKS With Amazon ECR: ./kubernetes-on-eks/eks-with-amazon-ecr/eks-with-amazon-ecr.md
+      - CI/CD for EKS:
+          - CI/CD for EKS Using AWS CodePipeline: ./kubernetes-on-eks/ci-cd-with-eks/ci-cd-for-eks-using-aws-codepipeline.md
+      - Helm:
+          - Introduction to Helm: ./kubernetes-on-eks/helm/introduction-to-helm.md
+          - Helm Upgrade and Rollback: ./kubernetes-on-eks/helm/helm-upgrade-and-rollback.md
+          - Create Your Own Helm Chart: ./kubernetes-on-eks/helm/create-your-own-helm-chart.md
+          - Using Helm for Templating: ./kubernetes-on-eks/helm/using-helm-for-templating.md
+      - CI/CD for Helm:
+          - CI/CD for Helm Using AWS CodePipeline: ./kubernetes-on-eks/ci-cd-for-helm/ci-cd-for-helm-using-aws-codepipeline.md
+      - Argo CD:
+          - Introduction to Argo CD: ./kubernetes-on-eks/argo-cd/introduction-to-argo-cd.md
+          - Install Argo CD: ./kubernetes-on-eks/argo-cd/install-argo-cd.md
+          - Create Argo CD Application: ./kubernetes-on-eks/argo-cd/create-argo-cd-application.md
   - DevOps & SRE Interview Questions:
       - Introduction: ./devops-and-sre-interview-questions/index.md
       - Computer Networking: ./devops-and-sre-interview-questions/networking.md
       - Linux: ./devops-and-sre-interview-questions/linux.md
       - Thanos: ./devops-and-sre-interview-questions/thanos.md
-
 
 # Plugins
 plugins:
@@ -267,7 +265,6 @@ plugins:
       minify_html: true
       minify_js: true
       minify_css: true
-
 
 # Theme
 theme:
@@ -299,7 +296,6 @@ theme:
   favicon: assets/images/icons/logo_teal.png
   logo: assets/images/icons/logo_white.png
 
-
 # Extra
 extra:
   analytics:
@@ -316,7 +312,7 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page could be improved
           data: 0
-          note: >- 
+          note: >-
             Thanks for your feedback!
   generator: false # Removes Made with Material for MkDocs from footer
   status:
@@ -331,16 +327,13 @@ extra:
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/reyanshkharga
 
-
 extra_css:
   - stylesheets/extra.css
   - https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css
 
-
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
 
 markdown_extensions:
   - pymdownx.inlinehilite
@@ -378,7 +371,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
 
 copyright: |
   Copyright &copy; 2023 <a href="https://kloudkoncepts.com"  target="_blank" rel="noopener">Kloud Koncepts</a> by

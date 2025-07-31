@@ -4,7 +4,7 @@ site_description: >-
   Master Kubernetes and Microservices on the cloud. Learn how to deploy applications on Kubernetes,
   including Service Mesh, CI/CD, logging, and monitoring, while following the best DevOps practices.
 site_author: Reyansh Kharga
-site_url: https://https://reyanshkharga.github.io/kloudkoncepts/
+site_url: https://reyanshkharga.github.io/kloudkoncepts/
 repo_name: ReyanshKharga/eks-kubernetes-masterclass
 repo_url: https://github.com/ReyanshKharga/eks-kubernetes-masterclass
 strict: true
@@ -373,5 +373,5 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 copyright: |
-  Copyright &copy; 2023 <a href="https://https://reyanshkharga.github.io/kloudkoncepts"  target="_blank" rel="noopener">Kloud Koncepts</a> by
+  Copyright &copy; 2023 <a href="https://reyanshkharga.github.io/kloudkoncepts"  target="_blank" rel="noopener">Kloud Koncepts</a> by
   <a href="https://linkedin.com/in/ReyanshKharga"  target="_blank" rel="noopener">Reyansh Kharga</a>

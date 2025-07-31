@@ -101,5 +101,5 @@ _ [Istio Architecture]{:target="\_blank"}
 <!-- Hyperlinks -->
 
 [What is Istio?]: https://istio.io/latest/about/service-mesh/#what-is-istio
-[service mesh]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/service-mesh/introduction-to-service-mesh/
+[service mesh]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/service-mesh/introduction-to-service-mesh/
 [Istio Architecture]: https://www.istioworkshop.io/03-servicemesh-overview/istio-architecture/

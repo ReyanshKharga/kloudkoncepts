@@ -131,8 +131,8 @@ _ [Set up Fluent Bit as a DaemonSet to send logs to CloudWatch Logs]{:target="\_
 
 <!-- Hyperlinks -->
 
-[DaemonSet]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/daemonset/introduction-to-daemonset/
+[DaemonSet]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/daemonset/introduction-to-daemonset/
 [Send logs to CloudWatch Logs]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-EKS-logs.html
 [Set up Fluent Bit as a DaemonSet to send logs to CloudWatch Logs]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-setup-logs-FluentBit.html
 [GitHub - aws-samples/amazon-cloudwatch-container-insights]: https://github.com/aws-samples
-[microservices]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/microservices/deploy-microservices-in-kubernetes/
+[microservices]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/microservices/deploy-microservices-in-kubernetes/

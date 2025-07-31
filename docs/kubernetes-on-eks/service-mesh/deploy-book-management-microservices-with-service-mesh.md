@@ -947,8 +947,8 @@ Verify if everything is properly and you can interact with book web frontend ser
 [reyanshkharga/book-management:book-genres]: https://hub.docker.com/r/reyanshkharga/book-management/tags
 [reyanshkharga/book-management:book-web]: https://hub.docker.com/r/reyanshkharga/book-management/tags
 [mongo:5.0.2]: https://hub.docker.com/_/mongo
-[IngressGroup]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/ingress-with-ingressgroup/
-[dynamic provisioning]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
-[persistent volume]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
-[AWS Load Balancer Controller]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
-[ExternalDNS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/
+[IngressGroup]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/ingress-with-ingressgroup/
+[dynamic provisioning]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
+[persistent volume]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
+[AWS Load Balancer Controller]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
+[ExternalDNS]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/

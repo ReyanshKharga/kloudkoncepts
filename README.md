@@ -1,6 +1,6 @@
-# https://reyanshkharga.github.io/kloudkoncepts
+# reyanshkharga.github.io/kloudkoncepts
 
-This repository is used to host https://reyanshkharga.github.io/kloudkoncepts
+This repository is used to host reyanshkharga.github.io/kloudkoncepts
 
 ## How to Build?
 
@@ -26,4 +26,4 @@ pip3 install -r requirements.txt
 
 ## Deploying to GitHub Pages
 
-Make sure `gh-pages` branch has a file created called `CNAME` that contains the domain name you want. In my case it is www.https://reyanshkharga.github.io/kloudkoncepts.
+Make sure `gh-pages` branch has a file created called `CNAME` that contains the domain name you want. In my case it is www.reyanshkharga.github.io/kloudkoncepts.

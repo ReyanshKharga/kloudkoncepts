@@ -11,4 +11,4 @@ Check out the [Amazon EKS Masterclass: Kubernetes and Microservices on EKS] cour
 
 <!-- Hyperlinks -->
 
-[Amazon EKS Masterclass: Kubernetes and Microservices on EKS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/
+[Amazon EKS Masterclass: Kubernetes and Microservices on EKS]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/

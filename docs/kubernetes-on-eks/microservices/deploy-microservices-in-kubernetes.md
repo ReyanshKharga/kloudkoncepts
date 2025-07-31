@@ -580,26 +580,31 @@ Access the frontend service from your browser and perform some CRUD operations a
 5. Check Health
 
 === ":octicons-image-16: `Get Books`"
+
 <p align="center">
 <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/get-books.png" alt="Get Books" loading="lazy" />
 </p>
 
 === ":octicons-image-16: `Add Book`"
+
 <p align="center">
 <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/add-book.png" alt="Add Book" />
 </p>
 
 === ":octicons-image-16: `Update Book`"
+
 <p align="center">
 <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/update-book.png" alt="Update Book" />
 </p>
 
 === ":octicons-image-16: `Delete Book`"
+
 <p align="center">
 <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/delete-book.png" alt="Delete Book" />
 </p>
 
 === ":octicons-image-16: `Check Health`"
+
 <p align="center">
 <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/check-health.png" alt="Check Health" />
 </p>
@@ -663,9 +668,9 @@ All AWS resources, such as load balancers, Route 53 records, etc., created by AW
 [reyanshkharga/nodeapp:mongo]: https://hub.docker.com/r/reyanshkharga/nodeapp
 [reyanshkharga/reactapp:v1]: https://hub.docker.com/r/reyanshkharga/reactapp
 [mongo:5.0.2]: https://hub.docker.com/_/mongo
-[IngressGroup]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/ingress-with-ingressgroup/
-[dynamic provisioning]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
+[IngressGroup]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/ingress-with-ingressgroup/
+[dynamic provisioning]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
 [Kubernetes Resource Creation Order]: https://stackoverflow.com/a/56009748/10065458
-[persistent volume]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
-[AWS Load Balancer Controller]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
-[ExternalDNS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/
+[persistent volume]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
+[AWS Load Balancer Controller]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
+[ExternalDNS]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/

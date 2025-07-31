@@ -201,5 +201,5 @@ _ [Ingress Gateways]{:target="\_blank"} \* [Istio Traffic Management]{:target="\
 <!-- Hyperlinks -->
 
 [Istio Ingress Gateway Workshop]: https://www.istioworkshop.io/09-traffic-management/01-ingress-gateway/
-[Ingress Gateways]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/service-mesh/introduction-to-service-mesh/
+[Ingress Gateways]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/service-mesh/introduction-to-service-mesh/
 [Istio Traffic Management]: https://istio.io/latest/docs/concepts/traffic-management/

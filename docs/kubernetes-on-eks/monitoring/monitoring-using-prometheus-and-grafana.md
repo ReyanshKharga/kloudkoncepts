@@ -401,8 +401,8 @@ _ [Prometheus values.yml]{:target="\_blank"} \* [Grafana values.yml]{:target="\_
 <!-- Hyperlinks -->
 
 [prometheus values]: https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml
-[AWS Load Balancer Controller]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
-[ExternalDNS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/
+[AWS Load Balancer Controller]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
+[ExternalDNS]: https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/
 [grafana values]: https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 [Monitoring using Prometheus and Grafana]: https://www.eksworkshop.com/intermediate/240_monitoring/
 [Grafana values.yml]: https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml

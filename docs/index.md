@@ -9,8 +9,6 @@ Learn AWS, Kubernetes, DevOps, Microservices, Service Mesh, CI/CD, Logging, Moni
 
 Check out the [Amazon EKS Masterclass: Kubernetes and Microservices on EKS] course.
 
-
-
-
 <!-- Hyperlinks -->
-[Amazon EKS Masterclass: Kubernetes and Microservices on EKS]: https://kloudkoncepts.com/kubernetes-on-eks/
+
+[Amazon EKS Masterclass: Kubernetes and Microservices on EKS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/

@@ -6,52 +6,47 @@ description: Update the book management microservices application to use istio g
 
 Let's update book management microservices that we created earlier. We will remove all kubernetes ingress objects and use istio gateways and virtual services instead.
 
-
-
 ## Prerequisite
 
 To follow this tutorial, you'll require a domain and, additionally, an SSL certificate for the domain and its subdomains.
 
 1. Register a Route 53 Domain
 
-    Go to AWS Console and register a Route 53 domain. You can opt for a cheaper TLD (top level domain) such as `.link`
+   Go to AWS Console and register a Route 53 domain. You can opt for a cheaper TLD (top level domain) such as `.link`
 
-    !!! note
-        It usually takes about 10 minutes but it might take about an hour for the registered domain to become available.
+   !!! note
+   It usually takes about 10 minutes but it might take about an hour for the registered domain to become available.
 
 2. Request a Public Certificate
 
-    Visit AWS Certificate Manager in AWS Console and request a public certificate for your domain and all the subdomains. For example, if you registered for a domain `example.com` then request certificate for `example.com` and `*.example.com`
+   Visit AWS Certificate Manager in AWS Console and request a public certificate for your domain and all the subdomains. For example, if you registered for a domain `example.com` then request certificate for `example.com` and `*.example.com`
 
-    !!! note
-        Make sure you request the certificate in the region where your EKS cluster is in.
+   !!! note
+   Make sure you request the certificate in the region where your EKS cluster is in.
 
 3. Validate the Certificate
 
-    Validate the requested certificate by adding `CNAME` records in Route 53. It is a very simple process. Go to the certificate you created and click on `Create records in Route 53`. The `CNAMEs` will be automatically added to Route 53.
+   Validate the requested certificate by adding `CNAME` records in Route 53. It is a very simple process. Go to the certificate you created and click on `Create records in Route 53`. The `CNAMEs` will be automatically added to Route 53.
 
-    !!! note
-        It usually takes about 5 minutes but it might take about an hour for the certificate to be ready for use.
-
+   !!! note
+   It usually takes about 5 minutes but it might take about an hour for the certificate to be ready for use.
 
 Now that you have everything you need, let's move on to the demonstration.
-
 
 ## Docker Images
 
 Here are the Docker Images used in this tutorial:
 
-- [reyanshkharga/book-management:book-details]{:target="_blank"}
-- [reyanshkharga/book-management:book-genres]{:target="_blank"}
-- [reyanshkharga/book-management:book-web]{:target="_blank"}
+- [reyanshkharga/book-management:book-details]{:target="\_blank"}
+- [reyanshkharga/book-management:book-genres]{:target="\_blank"}
+- [reyanshkharga/book-management:book-web]{:target="\_blank"}
 
-!!! note
-    1. `reyanshkharga/book-management:book-genres` is a Node.js backend app that uses MongoDB to store and retrieve data, providing a list of books for each genre.
+!!! note 1. `reyanshkharga/book-management:book-genres` is a Node.js backend app that uses MongoDB to store and retrieve data, providing a list of books for each genre.
 
         Environment Variables:
 
         - `MONGODB_URI` (Required)
-        
+
     2. `reyanshkharga/book-management:book-details` is a Node.js backend app that uses MongoDB to store and retrieve data, providing details for a given book. It also calls the `book-genres` microservice to return the list of books for a given genre.
 
         Environment variables:
@@ -65,8 +60,6 @@ Here are the Docker Images used in this tutorial:
 
         - `REACT_APP_API_ENDPOINT` (Required)
 
-
-
 ## Objective
 
 We are going to deploy the following microservices on our EKS kubernetes cluster:
@@ -77,19 +70,17 @@ We are going to deploy the following microservices on our EKS kubernetes cluster
 4. Book Genres microservice
 5. Book Web microservice
 
-
 The following diagram illustrates the communication between microservices:
 
-``` mermaid
+```mermaid
 graph LR
   A(Book Web) --> B(Book Details);
   B --> C(Book Genres);
-  B -.-> BD[("Book Details 
+  B -.-> BD[("Book Details
     Database")];
-  C -.-> CD[("Book Genres 
+  C -.-> CD[("Book Genres
     Database")];
 ```
-
 
 ## Step 1: Deploy Book Genres Database Microservice
 
@@ -235,14 +226,14 @@ kubectl apply -f book-genres-db/
 This will create the following kubernetes objects:
 
 1. A namespace named `book-genres-db`
-2. A `StorageClass` (SC) for [dynamic provisioning]{:target="_blank"} of persistent volume
+2. A `StorageClass` (SC) for [dynamic provisioning]{:target="\_blank"} of persistent volume
 3. A `PersistentVolumeClaim` (PVC) in the `book-genres-db` namespace
 4. MongoDB deployment in the `book-genres-db` namespace
 5. MongoDB service in the `book-genres-db` namespace
 
 We are using Amazon EBS to persist the MongoDB data. EBS is provisioned dynamically using AWS EBS-CSI driver.
 
-With [persistent volume]{:target="_blank"} even if the MongoDB pod goes down the data will remain intact. When the new pod comes up we'll have the access to the same data.
+With [persistent volume]{:target="\_blank"} even if the MongoDB pod goes down the data will remain intact. When the new pod comes up we'll have the access to the same data.
 
 We are also using configmap to populate data in the MongoDB database.
 
@@ -430,14 +421,14 @@ kubectl apply -f book-details-db/
 This will create the following kubernetes objects:
 
 1. A namespace named `book-details-db`
-2. A `StorageClass` (SC) for [dynamic provisioning]{:target="_blank"} of persistent volume
+2. A `StorageClass` (SC) for [dynamic provisioning]{:target="\_blank"} of persistent volume
 3. A `PersistentVolumeClaim` (PVC) in the `book-details-db` namespace
 4. MongoDB deployment in the `book-details-db` namespace
 5. MongoDB service in the `book-details-db` namespace
 
 We are using Amazon EBS to persist the MongoDB data. EBS is provisioned dynamically using AWS EBS-CSI driver.
 
-With [persistent volume]{:target="_blank"} even if the MongoDB pod goes down the data will remain intact. When the new pod comes up we'll have the access to the same data.
+With [persistent volume]{:target="\_blank"} even if the MongoDB pod goes down the data will remain intact. When the new pod comes up we'll have the access to the same data.
 
 We are also using configmap to populate data in the MongoDB database.
 
@@ -475,7 +466,6 @@ use <db-name>
 # List collections
 show collections
 ```
-
 
 ## Step 3: Deploy Book Genres Microservice
 
@@ -550,7 +540,7 @@ Let's create the kubernetes objects for our Book Genres microservice as follows:
     metadata:
       name: book-genres-gateway
       namespace: book-genres
-    spec: 
+    spec:
       selector:
         istio: ingressgateway # use Istio default gateway implementation
       servers:
@@ -572,14 +562,14 @@ Let's create the kubernetes objects for our Book Genres microservice as follows:
       namespace: book-genres
       annotations:
         external-dns.alpha.kubernetes.io/target: "istio-load-balancer-1556246780.ap-south-1.elb.amazonaws.com"
-    spec: 
+    spec:
       hosts:
       - "book-genres.example.com"
       gateways:
       - book-genres-gateway
       http:
-      - match: 
-        - uri:   
+      - match:
+        - uri:
             prefix: /
         route:
         - destination:
@@ -617,7 +607,6 @@ This will create the following kubernetes objects:
 4. Istio Gateway for Book Genres service
 5. Istio Virtual Service for Book Genres service
 
-
 View the updated proxy configuration:
 
 ```
@@ -640,7 +629,6 @@ Open any browser on your local host machine and hit the URL to access the book g
 ```
 https://book-genres.example.com
 ```
-
 
 ## Step 4: Deploy Book Details Microservice
 
@@ -717,7 +705,7 @@ Let's create the kubernetes objects for our Book Details microservice as follows
     metadata:
       name: book-details-gateway
       namespace: book-details
-    spec: 
+    spec:
       selector:
         istio: ingressgateway # use Istio default gateway implementation
       servers:
@@ -739,14 +727,14 @@ Let's create the kubernetes objects for our Book Details microservice as follows
       namespace: book-details
       annotations:
         external-dns.alpha.kubernetes.io/target: "istio-load-balancer-1556246780.ap-south-1.elb.amazonaws.com"
-    spec: 
+    spec:
       hosts:
       - "book-details.example.com"
       gateways:
       - book-details-gateway
       http:
-      - match: 
-        - uri:   
+      - match:
+        - uri:
             prefix: /
         route:
         - destination:
@@ -806,7 +794,6 @@ Open any browser on your local host machine and hit the URL to access the book d
 ```
 https://book-details.example.com
 ```
-
 
 ## Step 5: Deploy Book Web Microservice
 
@@ -879,7 +866,7 @@ Let's create the kubernetes objects for our Book Web microservice as follows:
     metadata:
       name: book-web-gateway
       namespace: book-web
-    spec: 
+    spec:
       selector:
         istio: ingressgateway # use Istio default gateway implementation
       servers:
@@ -901,14 +888,14 @@ Let's create the kubernetes objects for our Book Web microservice as follows:
       namespace: book-web
       annotations:
         external-dns.alpha.kubernetes.io/target: "istio-load-balancer-1556246780.ap-south-1.elb.amazonaws.com"
-    spec: 
+    spec:
       hosts:
       - "book-web.example.com"
       gateways:
       - book-web-gateway
       http:
-      - match: 
-        - uri:   
+      - match:
+        - uri:
             prefix: /
         route:
         - destination:
@@ -975,7 +962,6 @@ https://book-web.example.com
 
 Verify if everything is properly and you can interact with book web frontend service and get the book and genre details.
 
-
 ## Step 6: Generate Traffic to Gather Istio Metrics
 
 Let's generate traffic for our book management microservices to gather sufficient Istio metrics that we can visualize in Grafana. We'll use selenium to simulate and generate traffic.
@@ -1029,17 +1015,15 @@ Also, view the service graph in Kiali for the updated microservices. It should l
     <img class="shadowed-image" src="../../../assets/eks-course-images/service-mesh/kiali-book-management.png" alt="Kiali Book Management" loading="lazy" />
 </p>
 
-
 Notice how `book-details-service` calls `book-genres-service` and both services independently calls their respective databases.
 
 You won't see `book-web-service` calling `book-details-service` in the graph because `book-web-service` uses the public API to call `book-details-service`.
 
-
-
 <!-- Hyperlinks -->
+
 [reyanshkharga/book-management:book-details]: https://hub.docker.com/r/reyanshkharga/book-management/tags
 [reyanshkharga/book-management:book-genres]: https://hub.docker.com/r/reyanshkharga/book-management/tags
 [reyanshkharga/book-management:book-web]: https://hub.docker.com/r/reyanshkharga/book-management/tags
 [mongo:5.0.2]: https://hub.docker.com/_/mongo
-[dynamic provisioning]: https://kloudkoncepts.com/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
-[persistent volume]: https://kloudkoncepts.com/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
+[dynamic provisioning]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
+[persistent volume]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/

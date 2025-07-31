@@ -24,7 +24,7 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 END OF TERMS AND CONDITIONS
 
-
 <!-- Hyperlinks -->
-[Kloud Koncepts]: https://kloudkoncepts.com
+
+[Kloud Koncepts]: https://https://reyanshkharga.github.io/kloudkoncepts
 [Reyansh Kharga]: https://www.linkedin.com/in/reyanshkharga/

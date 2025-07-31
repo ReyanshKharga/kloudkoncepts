@@ -8,7 +8,6 @@ We can use Prometheus and Grafana to monitor kubernetes resources, workloads and
 
 Prometheus and Grafana form a powerful duo for monitoring Kubernetes. They aid in tracking resource utilization, workload performance, and diverse metrics critical for maintaining cluster health.
 
-
 ## What is Prometheus?
 
 Prometheus is a monitoring solution for storing time series data like metrics. It operates by periodically scraping metrics from configured targets using a pull-based model.
@@ -16,7 +15,6 @@ Prometheus is a monitoring solution for storing time series data like metrics. I
 The core components of Prometheus include the `Prometheus Server`, which stores time-series data, a multidimensional data model, `service discovery` for dynamic target identification, and an `Alert Manager` for alerting based on predefined rules.
 
 Using `PromQL`, users query and analyze metrics, while exporters facilitate the exposure of specific metrics from various systems.
-
 
 ## What is Grafana?
 
@@ -26,10 +24,9 @@ Its key components include versatile dashboard creation, data source integration
 
 Grafana simplifies complex data visualization, enabling users to build insightful, customizable dashboards that display metrics from multiple sources.
 
-
 ## Metrics and Exporters
 
-Kubernetes exposes some basic metrics by default through an endpoint named `/metrics`. These metrics include information about the state of the kubernetes components and resources, such as the number of running pods, CPU and memory usage, API server latency, and more. 
+Kubernetes exposes some basic metrics by default through an endpoint named `/metrics`. These metrics include information about the state of the kubernetes components and resources, such as the number of running pods, CPU and memory usage, API server latency, and more.
 
 the `/metrics` endpoint is accessible on the kubernetes API server and provides valuable insights into the cluster's health and performance. These metrics can be utilized by monitoring tools like Prometheus to gather information and create visualizations for better cluster management.
 
@@ -39,11 +36,9 @@ the `/metrics` endpoint is accessible on the kubernetes API server and provides 
 
 You can also set up custom exporters in kubernetes to capture custom metrics from your applications or services. These tailored tools expand monitoring capabilities, providing detailed insights beyond the standard metrics, addressing your specific monitoring needs.
 
-
 ## Prerequisites
 
 We will use `helm` to install Prometheus and Grafana monitoring tools. So, make sure `helm` is installed on your local machine.
-
 
 ## Step 1: Add Prometheus and Grafana Helm Repository
 
@@ -55,14 +50,13 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo add grafana https://grafana.github.io/helm-charts
 ```
 
-
 ## Step 2: Deploy Prometheus
 
 Let's deploy Prometheus in our EKS kubernetes cluster.
 
 ### 1. Install Prometheus
 
-In this example, we are primarily going to use the standard configuration. In production you might want to override default [prometheus values]{:target="_blank"} using `--set` command.
+In this example, we are primarily going to use the standard configuration. In production you might want to override default [prometheus values]{:target="\_blank"} using `--set` command.
 
 ```
 # Create namespace
@@ -85,7 +79,6 @@ The Prometheus server can be accessed via port 80 on the following DNS name from
 prometheus-server.prometheus.svc.cluster.local
 ```
 
-
 ### 2. Verify Prometheus Components
 
 Verify if Prometheus components were deployed as expected:
@@ -98,7 +91,6 @@ helm list -n prometheus
 kubectl get all -n prometheus
 ```
 
-
 ### 3. Verify EBS Volumes
 
 When you install prometheus using helm, it dynamically provisions two EBS volumes as follows:
@@ -109,7 +101,6 @@ When you install prometheus using helm, it dynamically provisions two EBS volume
 Go to AWS console and verify if the EBS volumes were created. You can also add `Name` tags manually to the EBS volumes to make it easier to reconize the purpose of the voumes.
 
 Note that in our installation we have overriden the default `8 Gi` setting for `prometheus-server` to `20 Gi` using the `--set` command.
-
 
 ### 4. Access Prometheus Server
 
@@ -130,7 +121,6 @@ Click on `Status -> Targets` to view the targets that Prometheus registered. You
 - `kubernetes-nodes`
 - `kubernetes-pods`
 - `kubernetes-service-endpoints`
-
 
 ### 5. Create Ingress for Prometheus
 
@@ -192,11 +182,11 @@ kubectl get ingress -n prometheus
 ```
 
 !!! note
-    We are using an ingress group for load balancer to have a shared load balancer because using more load balancers will be expensive since load balancers are charged hourly.
+We are using an ingress group for load balancer to have a shared load balancer because using more load balancers will be expensive since load balancers are charged hourly.
 
 The ingress uses an existing internet-facing load balancer from another ingress in the same group. If there isn't one, it'll create a new load balancer and attach the SSL certificate to it.
 
-Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="_blank"} and [ExternalDNS]{:target="_blank"}.
+Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="\_blank"} and [ExternalDNS]{:target="\_blank"}.
 
 Open any browser on your local host machine and hit the Prometheus host URL to access prometheus:
 
@@ -208,7 +198,7 @@ https://prometheus.example.com
 
 Now that Prometheus is ready, let's deploy Grafana for visualization.
 
-In this example, we are primarily going to use the default values but we are also overriding several parameters. In production you might want to override other [grafana values]{:target="_blank"} using `--set` command.
+In this example, we are primarily going to use the default values but we are also overriding several parameters. In production you might want to override other [grafana values]{:target="\_blank"} using `--set` command.
 
 ### 1. Create Prometheus Data Source for Grafana
 
@@ -231,13 +221,12 @@ First, create a YAML file called `grafana.yaml` as follows:
 The `grafana.yaml` defines the data source that Grafana would use. In this case it is the Prometheus we deployed.
 
 !!! note
-    When services communicate in kubernetes, they need to provide the Fully Qualified Domain Name (FQDN) which has the following syntax:
+When services communicate in kubernetes, they need to provide the Fully Qualified Domain Name (FQDN) which has the following syntax:
 
     ```yaml
     <service-name>.<namespace>.svc.cluster.local
     ```
     If services are in the same namespace, using just `<service-name>` suffices for communication within the cluster.
-
 
 ### 2. Install Grafana
 
@@ -259,7 +248,6 @@ The output should look something like this:
 <p align="center">
     <img class="shadowed-image" src="../../../assets/eks-course-images/monitoring/grafana-installation-output.png" alt="Output of Grafana Installation" loading="lazy" />
 </p>
-
 
 ### 3. Verify Grafana Installation
 
@@ -349,18 +337,17 @@ kubectl get ingress -n grafana
 ```
 
 !!! note
-    We are using an ingress group for load balancer to have a shared load balancer because using more load balancers will be expensive since load balancers are charged hourly.
+We are using an ingress group for load balancer to have a shared load balancer because using more load balancers will be expensive since load balancers are charged hourly.
 
 The ingress uses an existing internet-facing load balancer from another ingress in the same group. If there isn't one, it'll create a new load balancer and attach the SSL certificate to it.
 
-Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="_blank"} and [ExternalDNS]{:target="_blank"}.
+Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="\_blank"} and [ExternalDNS]{:target="\_blank"}.
 
 Open any browser on your local host machine and hit the Grafana host URL to access Grafana:
 
 ```
 https://grafana.example.com
 ```
-
 
 ## Clean Up
 
@@ -381,7 +368,6 @@ kubectl delete ns grafana
 ```
 
 Deleting a namespace will delete all the resources in the namespace.
-
 
 ## Increase Prometheus Server Persistent Volume Size
 
@@ -407,19 +393,16 @@ Now, we can increase the prometheus server persistent volume by upgrading the he
 helm upgrade prometheus prometheus-community/prometheus --namespace prometheus --set server.persistentVolume.size=50Gi
 ```
 
-
-
 !!! quote "References:"
-    !!! quote ""
-        * [Monitoring using Prometheus and Grafana]{:target="_blank"}
-        * [Prometheus values.yml]{:target="_blank"}
-        * [Grafana values.yml]{:target="_blank"}
-
+!!! quote ""
+_ [Monitoring using Prometheus and Grafana]{:target="\_blank"}
+_ [Prometheus values.yml]{:target="\_blank"} \* [Grafana values.yml]{:target="\_blank"}
 
 <!-- Hyperlinks -->
+
 [prometheus values]: https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml
-[AWS Load Balancer Controller]: https://kloudkoncepts.com/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
-[ExternalDNS]: https://kloudkoncepts.com/kubernetes-on-eks/external-dns/introduction-to-external-dns/
+[AWS Load Balancer Controller]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
+[ExternalDNS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/
 [grafana values]: https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 [Monitoring using Prometheus and Grafana]: https://www.eksworkshop.com/intermediate/240_monitoring/
 [Grafana values.yml]: https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml

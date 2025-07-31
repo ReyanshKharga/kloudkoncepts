@@ -6,52 +6,48 @@ description: Learn how to efficiently deploy microservices in Kubernetes. Our gu
 
 Now that we have a good understanding of kubernetes and related AWS services, let's deploy a few microservices in our EKS kubernetes cluster.
 
-
 ## Prerequisite
 
 To follow this tutorial, you'll require a domain and, additionally, an SSL certificate for the domain and its subdomains.
 
 1. Register a Route 53 Domain
 
-    Go to AWS Console and register a Route 53 domain. You can opt for a cheaper TLD (top level domain) such as `.link`
+   Go to AWS Console and register a Route 53 domain. You can opt for a cheaper TLD (top level domain) such as `.link`
 
-    !!! note
-        It usually takes about 10 minutes but it might take about an hour for the registered domain to become available.
+   !!! note
+   It usually takes about 10 minutes but it might take about an hour for the registered domain to become available.
 
 2. Request a Public Certificate
 
-    Visit AWS Certificate Manager in AWS Console and request a public certificate for your domain and all the subdomains. For example, if you registered for a domain `example.com` then request certificate for `example.com` and `*.example.com`
+   Visit AWS Certificate Manager in AWS Console and request a public certificate for your domain and all the subdomains. For example, if you registered for a domain `example.com` then request certificate for `example.com` and `*.example.com`
 
-    !!! note
-        Make sure you request the certificate in the region where your EKS cluster is in.
+   !!! note
+   Make sure you request the certificate in the region where your EKS cluster is in.
 
 3. Validate the Certificate
 
-    Validate the requested certificate by adding `CNAME` records in Route 53. It is a very simple process. Go to the certificate you created and click on `Create records in Route 53`. The `CNAMEs` will be automatically added to Route 53.
+   Validate the requested certificate by adding `CNAME` records in Route 53. It is a very simple process. Go to the certificate you created and click on `Create records in Route 53`. The `CNAMEs` will be automatically added to Route 53.
 
-    !!! note
-        It usually takes about 5 minutes but it might take about an hour for the certificate to be ready for use.
-
+   !!! note
+   It usually takes about 5 minutes but it might take about an hour for the certificate to be ready for use.
 
 Now that you have everything you need, let's move on to the demonstration.
-
 
 ## Docker Images
 
 Here are the Docker Images used in this tutorial:
 
-- [reyanshkharga/nodeapp:mongo]{:target="_blank"}
-- [reyanshkharga/reactapp:v1]{:target="_blank"}
-- [mongo:5.0.2]{:target="_blank"}
+- [reyanshkharga/nodeapp:mongo]{:target="\_blank"}
+- [reyanshkharga/reactapp:v1]{:target="\_blank"}
+- [mongo:5.0.2]{:target="\_blank"}
 
-!!! note
-    1. `reyanshkharga/nodeapp:mongo` is a Node.js backend application that uses MongoDB to store and retrieve data.
+!!! note 1. `reyanshkharga/nodeapp:mongo` is a Node.js backend application that uses MongoDB to store and retrieve data.
 
         Environment Variables:
 
         - `MONGODB_URI` (Required)
         - `POD_NAME` (Optional)
-        
+
         Tha app has the following routes:
 
         - `GET /` Returns a JSON object containing `Host` and `Version`. If the `POD_NAME` environment variable is set, the value of the `Host` will be the value of the variable.
@@ -98,8 +94,6 @@ Here are the Docker Images used in this tutorial:
 
     3. `mongo:5.0.2` is MongoDB database. Our backend will use it to store and retrieve data to perform CRUD operations.
 
-
-
 ## Objective
 
 We are going to deploy the following microservices on our EKS kubernetes cluster:
@@ -108,20 +102,16 @@ We are going to deploy the following microservices on our EKS kubernetes cluster
 2. `Node.js Backend microservice`: uses docker image `reyanshkharga/nodeapp:mongo`
 3. `React Frontend microservice`: uses docker image `reyanshkharga/reactapp:v1`
 
-
 The following diagram illustrates the communication between microservices:
 
-``` mermaid
+```mermaid
 graph LR
   A(Frontend) ---> B(Backend);
   B -..-> C[(Database)];
 ```
 
-
 !!! note
-    We will use the same load balancer for both backend and frontend microservices because using more load balancers will be expensive since load balancers are charged hourly. We can achieve this using [IngressGroup]{:target="_blank"}.
-
-
+We will use the same load balancer for both backend and frontend microservices because using more load balancers will be expensive since load balancers are charged hourly. We can achieve this using [IngressGroup]{:target="\_blank"}.
 
 ## Step 1: Deploy MongoDB Database Microservice
 
@@ -235,18 +225,17 @@ kubectl apply -f mongodb/
 This will create the following kubernetes objects:
 
 1. A namespace named `mongodb`
-2. A `StorageClass` (SC) for [dynamic provisioning]{:target="_blank"} of persistent volume
+2. A `StorageClass` (SC) for [dynamic provisioning]{:target="\_blank"} of persistent volume
 3. A `PersistentVolumeClaim` (PVC) in the `mongodb` namespace
 4. MongoDB deployment in the `mongodb` namespace
 5. MongoDB service in the `mongodb` namespace
 
 !!! note
-    The order in which yaml files are applied doesn't matter since every relation except namespace is handled by label selectors, so it fixes itself once all resources are deployed.
+The order in which yaml files are applied doesn't matter since every relation except namespace is handled by label selectors, so it fixes itself once all resources are deployed.
 
 We are using Amazon EBS to persist the MongoDB data. EBS is provisioned dynamically using AWS EBS-CSI driver.
 
-With [persistent volume]{:target="_blank"} even if the MongoDB pod goes down the data will remain intact. When the new pod comes up we'll have the access to the same data.
-
+With [persistent volume]{:target="\_blank"} even if the MongoDB pod goes down the data will remain intact. When the new pod comes up we'll have the access to the same data.
 
 Verify if the resources were created successfully:
 
@@ -282,7 +271,6 @@ use <db-name>
 # List collections
 show collections
 ```
-
 
 ## Step 2: Deploy Node.js Backend Microservice
 
@@ -385,7 +373,6 @@ Let's create the kubernetes objects for our Node.js backend microservice as foll
                   number: 5000
     ```
 
-
 Assuming your folder structure looks like the one below:
 
 ```
@@ -409,10 +396,9 @@ This will create the following kubernetes objects:
 3. Backend service in the `backend` namespace
 4. Ingress for backend service
 
-
 The ingress creates an internet-facing load balancer and the SSL certificate is attached to the load balancer.
 
-Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="_blank"} and [ExternalDNS]{:target="_blank"}.
+Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="\_blank"} and [ExternalDNS]{:target="\_blank"}.
 
 Verify if the resources were created successfully:
 
@@ -433,8 +419,7 @@ https://backend.example.com
 ```
 
 !!! note
-    In real world it is best to have authorization and authentication in place for the backend services that is accessible on the internet. But for the sake of simplicity we have not used any authorization or authentication for the backend service.
-
+In real world it is best to have authorization and authentication in place for the backend services that is accessible on the internet. But for the sake of simplicity we have not used any authorization or authentication for the backend service.
 
 ## Step 3: Deploy React Frontend Microservice
 
@@ -536,7 +521,6 @@ Let's create the kubernetes objects for our React frontend microservice as follo
                   number: 3000
     ```
 
-
 Assuming your folder structure looks like the one below:
 
 ```
@@ -560,13 +544,12 @@ This will create the following kubernetes objects:
 3. Frontend service in the `frontend` namespace
 4. Ingress for frontend service
 
-
 The ingress creates an internet-facing load balancer and the SSL certificate is attached to the load balancer.
 
-Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="_blank"} and [ExternalDNS]{:target="_blank"}.
+Note that the certificate is automatically discovered with hostnames from the ingress resource. Also, a Route 53 record is added for the host. This is all done by the [AWS Load Balancer Controller]{:target="\_blank"} and [ExternalDNS]{:target="\_blank"}.
 
 !!! note
-    The frontend microservice uses the API provided by the backend microservice to perform the CRUD operations.
+The frontend microservice uses the API provided by the backend microservice to perform the CRUD operations.
 
 Verify if the resources were created successfully:
 
@@ -586,7 +569,6 @@ Open any browser on your local host machine and hit the URL to access the fronte
 https://frontend.example.com
 ```
 
-
 ## Step 4: Perform CRUD Operations and Verify Data in MongoDB
 
 Access the frontend service from your browser and perform some CRUD operations as follows:
@@ -598,29 +580,29 @@ Access the frontend service from your browser and perform some CRUD operations a
 5. Check Health
 
 === ":octicons-image-16: `Get Books`"
-    <p align="center">
-        <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/get-books.png" alt="Get Books" loading="lazy" />
-    </p>
+<p align="center">
+<img class="shadowed-image" src="../../../assets/eks-course-images/microservices/get-books.png" alt="Get Books" loading="lazy" />
+</p>
 
 === ":octicons-image-16: `Add Book`"
-    <p align="center">
-        <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/add-book.png" alt="Add Book" />
-    </p>
+<p align="center">
+<img class="shadowed-image" src="../../../assets/eks-course-images/microservices/add-book.png" alt="Add Book" />
+</p>
 
 === ":octicons-image-16: `Update Book`"
-    <p align="center">
-        <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/update-book.png" alt="Update Book" />
-    </p>
+<p align="center">
+<img class="shadowed-image" src="../../../assets/eks-course-images/microservices/update-book.png" alt="Update Book" />
+</p>
 
 === ":octicons-image-16: `Delete Book`"
-    <p align="center">
-        <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/delete-book.png" alt="Delete Book" />
-    </p>
+<p align="center">
+<img class="shadowed-image" src="../../../assets/eks-course-images/microservices/delete-book.png" alt="Delete Book" />
+</p>
 
 === ":octicons-image-16: `Check Health`"
-    <p align="center">
-        <img class="shadowed-image" src="../../../assets/eks-course-images/microservices/check-health.png" alt="Check Health" />
-    </p>
+<p align="center">
+<img class="shadowed-image" src="../../../assets/eks-course-images/microservices/check-health.png" alt="Check Health" />
+</p>
 
 Verify if the records have been inserted into the MongoDB database:
 
@@ -643,7 +625,6 @@ show collections
 # List items in the books collection
 db.books.find()
 ```
-
 
 ## Clean Up
 
@@ -674,22 +655,17 @@ kubectl delete -f manifests/
 
 All AWS resources, such as load balancers, Route 53 records, etc., created by AWS Load Balancer Controller via ingress or service objects, will also be deleted.
 
-
-
-
 !!! quote "References:"
-    !!! quote ""
-        * [Kubernetes Resource Creation Order]{:target="_blank"}
-
-
+!!! quote "" \* [Kubernetes Resource Creation Order]{:target="\_blank"}
 
 <!-- Hyperlinks -->
+
 [reyanshkharga/nodeapp:mongo]: https://hub.docker.com/r/reyanshkharga/nodeapp
 [reyanshkharga/reactapp:v1]: https://hub.docker.com/r/reyanshkharga/reactapp
 [mongo:5.0.2]: https://hub.docker.com/_/mongo
-[IngressGroup]: https://kloudkoncepts.com/kubernetes-on-eks/ingress/ingress-with-ingressgroup/
-[dynamic provisioning]: https://kloudkoncepts.com/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
+[IngressGroup]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/ingress-with-ingressgroup/
+[dynamic provisioning]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volume-using-amazon-ebs/dynamic-provisioning-of-pv-using-ebs/
 [Kubernetes Resource Creation Order]: https://stackoverflow.com/a/56009748/10065458
-[persistent volume]: https://kloudkoncepts.com/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
-[AWS Load Balancer Controller]: https://kloudkoncepts.com/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
-[ExternalDNS]: https://kloudkoncepts.com/kubernetes-on-eks/external-dns/introduction-to-external-dns/
+[persistent volume]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/kubernetes-fundamentals/storage-in-kubernetes/persistent-volumes/introduction-to-persistent-volumes/
+[AWS Load Balancer Controller]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/ingress/aws-load-balancer-controller/introduction-to-aws-load-balancer-controller/
+[ExternalDNS]: https://https://reyanshkharga.github.io/kloudkoncepts/kubernetes-on-eks/external-dns/introduction-to-external-dns/

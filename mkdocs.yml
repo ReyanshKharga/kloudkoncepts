@@ -296,6 +296,8 @@ theme:
 
 # Extra
 extra:
+  # No index.md in nav — logo would otherwise use site_url root (`/kloudkoncepts/.`), which 404s on `mkdocs serve` (no subpath). Point to the main docs entry.
+  homepage: kubernetes-on-eks/
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY

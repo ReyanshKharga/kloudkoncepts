@@ -11,7 +11,7 @@ strict: true
 
 # Define TOC or order of website
 nav:
-  - Kubernetes on Amazon EKS:
+  - Kubernetes Masterclass:
       - Course Introduction: ./kubernetes-on-eks/index.md
       - License: ./kubernetes-on-eks/license.md
       - Docker Fundamentals:
@@ -327,7 +327,6 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
-  - https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6

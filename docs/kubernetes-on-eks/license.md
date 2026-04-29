@@ -1,6 +1,6 @@
 # License
 
-Copyright :material-copyright: 2023 Kloud Koncepts by Reyansh Kharga
+Copyright :material-copyright: 2023 KubeSchool by Reyansh Kharga
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
@@ -26,5 +26,5 @@ END OF TERMS AND CONDITIONS
 
 <!-- Hyperlinks -->
 
-[Kloud Koncepts]: https://reyanshkharga.github.io/kloudkoncepts
+[KubeSchool]: https://reyanshkharga.github.io/kloudkoncepts/
 [Reyansh Kharga]: https://www.linkedin.com/in/reyanshkharga/

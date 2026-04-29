@@ -1,8 +1,8 @@
 # Site Details
-site_name: Kloud Koncepts
+site_name: KubeSchool
 site_description: >-
-  Master Kubernetes and Microservices on the cloud. Learn how to deploy applications on Kubernetes,
-  including Service Mesh, CI/CD, logging, and monitoring, while following the best DevOps practices.
+  KubeSchool docs — Kubernetes on Amazon EKS, microservices, service mesh, CI/CD, logging,
+  monitoring, and DevOps practices.
 site_author: Reyansh Kharga
 site_url: https://reyanshkharga.github.io/kloudkoncepts/
 repo_name: ReyanshKharga/eks-kubernetes-masterclass
@@ -11,7 +11,6 @@ strict: true
 
 # Define TOC or order of website
 nav:
-  - Home: index.md
   - Kubernetes on Amazon EKS:
       - Course Introduction: ./kubernetes-on-eks/index.md
       - License: ./kubernetes-on-eks/license.md
@@ -269,7 +268,6 @@ plugins:
 # Theme
 theme:
   name: material
-  custom_dir: docs/overrides
   features:
     - navigation.tabs
     - navigation.top
@@ -279,22 +277,22 @@ theme:
   language: en
   palette:
     - scheme: default
-      primary: teal
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: teal
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    text: Roboto
+    text: Outfit
     code: Roboto Mono
-  favicon: assets/images/icons/logo_teal.png
-  logo: assets/images/icons/logo_white.png
+  favicon: assets/images/icons/kubeschool-logo.png
+  logo: assets/images/icons/kubeschool-logo-white-outline.png
 
 # Extra
 extra:
@@ -373,5 +371,5 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 copyright: |
-  Copyright &copy; 2023 <a href="https://reyanshkharga.github.io/kloudkoncepts"  target="_blank" rel="noopener">Kloud Koncepts</a> by
-  <a href="https://linkedin.com/in/ReyanshKharga"  target="_blank" rel="noopener">Reyansh Kharga</a>
+  Copyright &copy; 2023 <a href="https://reyanshkharga.github.io/kloudkoncepts/" target="_blank" rel="noopener">KubeSchool</a> by
+  <a href="https://linkedin.com/in/ReyanshKharga" target="_blank" rel="noopener">Reyansh Kharga</a>

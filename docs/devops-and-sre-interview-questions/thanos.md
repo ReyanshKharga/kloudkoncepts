@@ -7,7 +7,7 @@ description: Discover everything about Thanos, including its functionality, comp
 Thanos is an open-source extension for Prometheus, providing long-term storage and global querying capabilities for Prometheus metrics.
 
 <p align="center">
-    <img src="../../../assets/devops-interview-images/thanos.png" alt="Working of Thanos" />
+    <img src="../../assets/devops-interview-images/thanos.png" alt="Working of Thanos" />
 </p>
 
 
